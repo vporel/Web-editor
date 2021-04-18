@@ -1,0 +1,13 @@
+splashscreen : {
+	1 : #22dcfd : cyan
+	2 : #1c91e2 : bleu clair
+	3 : #5865b9 : presque violet
+
+	bloc2 :
+		1 :  2f3944
+		2 : 414d5a
+}
+polices{
+	1: Arial Rounded MT Bold
+	2 : Lucida Sans Unicode
+}

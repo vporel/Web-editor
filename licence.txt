@@ -1,0 +1,7 @@
+Contrat de license :
+
+VPEditor est un programme open source développé par NKOUANANG POREL.
+Il est conçu pour permettre un développement rapide et facile des applications Web.
+Bien qu'il soit encore à sa verion 1.2, il possède déjà les caractéristiques nécessaires à un bon éditeur web.
+
+Vous avez licence de partager, modifier ce programme.

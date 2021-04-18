@@ -1,0 +1,258 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>588</width>
+    <height>423</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Nouveau  projet</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">*{color:lightgray;background-color:rgb(50,50,50);}
+QDialog{background-color:rgb(50,50,50);}
+QLineEdit{border:1px solid lightgray;height:25px;}
+QPushButton{border:1px solid rgb(130,130,130);border-radius:5px;padding:5px 5px;color:rgb(130,130,130);}QPushButton:hover{background:rgb(110,110,110);}QPushButton::enabled{color:lightgray;border-color:lightgray;}</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_2">
+   <item>
+    <widget class="QLabel" name="title">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font:25px calibri;padding-left:5px;</string>
+     </property>
+     <property name="text">
+      <string>Nouveau projet</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="zoneProjet" native="true">
+     <property name="styleSheet">
+      <string notr="true">QWidget#zoneProjet{border-top:2px solid lightgray;}</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout">
+      <item>
+       <widget class="QWidget" name="widget_2" native="true">
+        <layout class="QGridLayout" name="gridLayout">
+         <item row="0" column="0">
+          <widget class="QLabel" name="label">
+           <property name="styleSheet">
+            <string notr="true">font:15px calibri;margin: 0 5px</string>
+           </property>
+           <property name="text">
+            <string>Nom du projet : </string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="2">
+          <widget class="QLineEdit" name="lineEditName"/>
+         </item>
+         <item row="0" column="3">
+          <widget class="QLabel" name="label_7">
+           <property name="styleSheet">
+            <string notr="true">font:15px calibri;margin: 0 5px</string>
+           </property>
+           <property name="text">
+            <string>Type :</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="4">
+          <widget class="QComboBox" name="comboBoxType">
+           <property name="styleSheet">
+            <string notr="true">border:1px solid lightgray;width:100px;</string>
+           </property>
+           <item>
+            <property name="text">
+             <string>simple</string>
+            </property>
+           </item>
+           <item>
+            <property name="text">
+             <string>local</string>
+            </property>
+           </item>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QLabel" name="label_6">
+           <property name="styleSheet">
+            <string notr="true">font:15px calibri;margin: 0 5px</string>
+           </property>
+           <property name="text">
+            <string>Emplacement : </string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="lineEditPath">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+           <property name="placeholderText">
+            <string/>
+           </property>
+           <property name="cursorMoveStyle">
+            <enum>Qt::VisualMoveStyle</enum>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QPushButton" name="pushButtonChanger">
+           <property name="text">
+            <string>Changer</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="3">
+          <widget class="QLabel" name="label_8">
+           <property name="styleSheet">
+            <string notr="true">font:15px calibri;margin: 0 5px</string>
+           </property>
+           <property name="text">
+            <string>Url :</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="4">
+          <widget class="QLineEdit" name="lineEditUrl">
+           <property name="readOnly">
+            <bool>true</bool>
+           </property>
+           <property name="placeholderText">
+            <string>Si le type est &quot;local&quot;</string>
+           </property>
+           <property name="cursorMoveStyle">
+            <enum>Qt::VisualMoveStyle</enum>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QGroupBox" name="groupBox">
+        <property name="title">
+         <string>Liens entre fichiers</string>
+        </property>
+        <layout class="QGridLayout" name="gridLayout_2">
+         <item row="1" column="1">
+          <widget class="QPushButton" name="pushButtonAddStyle">
+           <property name="text">
+            <string>Ajouter un style</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="2">
+          <widget class="QPushButton" name="pushButtonAddScript">
+           <property name="text">
+            <string>Ajouter un script (JS ou PHP)</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="0">
+          <widget class="QPushButton" name="pushButtonAddMainFile">
+           <property name="text">
+            <string>Ajouter un fichier principal</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1" colspan="2">
+          <widget class="QLabel" name="label_2">
+           <property name="styleSheet">
+            <string notr="true">font-style:italic;</string>
+           </property>
+           <property name="text">
+            <string>Si un fichier est modifié, tout fichier principal auquel il est lié
+ sera automatiquement actualisé en cas de visualisation</string>
+           </property>
+           <property name="alignment">
+            <set>Qt::AlignCenter</set>
+           </property>
+          </widget>
+         </item>
+         <item row="2" column="2">
+          <widget class="QListWidget" name="listWidgetScripts"/>
+         </item>
+         <item row="2" column="1">
+          <widget class="QListWidget" name="listWidgetStyles"/>
+         </item>
+         <item row="1" column="0" rowspan="2">
+          <widget class="QListWidget" name="listWidgetMainFiles"/>
+         </item>
+         <item row="3" column="1">
+          <widget class="QPushButton" name="pushButtonRemoveStyle">
+           <property name="text">
+            <string>Retirer</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="2">
+          <widget class="QPushButton" name="pushButtonRemoveScript">
+           <property name="text">
+            <string>Retirer</string>
+           </property>
+          </widget>
+         </item>
+         <item row="3" column="0">
+          <widget class="QPushButton" name="pushButtonRemoveMain">
+           <property name="text">
+            <string>Retirer</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+      <item>
+       <widget class="QWidget" name="widget" native="true">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <spacer name="horizontalSpacer">
+           <property name="orientation">
+            <enum>Qt::Horizontal</enum>
+           </property>
+           <property name="sizeHint" stdset="0">
+            <size>
+             <width>444</width>
+             <height>20</height>
+            </size>
+           </property>
+          </spacer>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButtonOk">
+           <property name="text">
+            <string>OK</string>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QPushButton" name="pushButtonCancel">
+           <property name="text">
+            <string>Annuler</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

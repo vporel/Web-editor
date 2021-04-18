@@ -1,0 +1,16 @@
+body{
+	background-color:red;
+	margin:2px 3px 5px 10px;
+}
+
+#division{
+	display:block; 
+	width:100px; 
+	height:50px;
+}
+
+.blocks{
+	display:inline-block;
+	color:blue;
+	background:green;
+}

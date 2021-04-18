@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>dialogTheme</class>
+ <widget class="QDialog" name="dialogTheme">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>439</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>400</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Thème</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>C:/Users/VPOREL-PC/.designer/backup/images/logo-bleu.png</normaloff>C:/Users/VPOREL-PC/.designer/backup/images/logo-bleu.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">color:lightgray;background:rgb(50,50,50)</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout_5">
+   <item>
+    <widget class="QLabel" name="titre">
+     <property name="maximumSize">
+      <size>
+       <width>16777215</width>
+       <height>30</height>
+      </size>
+     </property>
+     <property name="styleSheet">
+      <string notr="true">font:25px calibri;padding-left:5px;</string>
+     </property>
+     <property name="text">
+      <string>Thème VPEditor</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QWidget" name="zoneTheme" native="true">
+     <property name="styleSheet">
+      <string notr="true">QWidget#zoneTheme{border-top:2px solid lightgray;}</string>
+     </property>
+     <layout class="QVBoxLayout" name="verticalLayout_4">
+      <item>
+       <layout class="QHBoxLayout" name="horizontalLayout">
+        <item>
+         <widget class="QLabel" name="label">
+          <property name="styleSheet">
+           <string notr="true">font:15px calibri;margin: 0 10px</string>
+          </property>
+          <property name="text">
+           <string>Thèmes prédéfinis :</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBoxThemes">
+          <property name="styleSheet">
+           <string notr="true">border:1px solid lightgray;width:100px;</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="label_6">
+          <property name="styleSheet">
+           <string notr="true">font:15px calibri;margin: 0 10px</string>
+          </property>
+          <property name="text">
+           <string>Général : </string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QComboBox" name="comboBoxGeneral">
+          <property name="styleSheet">
+           <string notr="true">border:1px solid lightgray;width:100px;</string>
+          </property>
+          <item>
+           <property name="text">
+            <string>Thème sombre</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Thème clair</string>
+           </property>
+          </item>
+         </widget>
+        </item>
+        <item>
+         <spacer name="horizontalSpacer">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <widget class="QSplitter" name="splitter">
+        <property name="minimumSize">
+         <size>
+          <width>0</width>
+          <height>300</height>
+         </size>
+        </property>
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <widget class="QWidget" name="widget" native="true">
+         <property name="maximumSize">
+          <size>
+           <width>150</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="styleSheet">
+          <string notr="true"/>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="styleSheet">
+             <string notr="true">font:15px calibri;</string>
+            </property>
+            <property name="text">
+             <string>Langages :</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QListWidget" name="listLangages">
+            <property name="styleSheet">
+             <string notr="true">border:1px solid lightgray;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="widget_3" native="true">
+         <property name="maximumSize">
+          <size>
+           <width>150</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLabel" name="label_3">
+            <property name="styleSheet">
+             <string notr="true">font:15px calibri;</string>
+            </property>
+            <property name="text">
+             <string>Mots : </string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QListWidget" name="listMots">
+            <property name="styleSheet">
+             <string notr="true">border:1px solid lightgray;</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+        <widget class="QWidget" name="widget_2" native="true">
+         <property name="minimumSize">
+          <size>
+           <width>280</width>
+           <height>0</height>
+          </size>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QGroupBox" name="groupCouleurs">
+            <property name="styleSheet">
+             <string notr="true">QGroupBox{font:15px calibri;}</string>
+            </property>
+            <property name="title">
+             <string>Couleurs</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <item>
+              <widget class="QPushButton" name="couleur">
+               <property name="styleSheet">
+                <string notr="true">min-height:45px;</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="pushButtonChangerCouleur">
+               <property name="styleSheet">
+                <string notr="true">min-height:45px;border-radius:5px;border:2px solid lightgray;width:100px;font-size:15px;</string>
+               </property>
+               <property name="text">
+                <string>Changer couleur</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QGroupBox" name="groupMots">
+            <property name="styleSheet">
+             <string notr="true">QGroupBox{font:15px calibri;}</string>
+            </property>
+            <property name="title">
+             <string>Font</string>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_7">
+             <item>
+              <widget class="QCheckBox" name="checkBoxItalique">
+               <property name="styleSheet">
+                <string notr="true">font:italic 20px sans-serif;min-height:30px;padding-left:25px;</string>
+               </property>
+               <property name="text">
+                <string>Italique</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="checkBoxGras">
+               <property name="styleSheet">
+                <string notr="true">font:bold 20px sans-serif;min-height:30px;padding-left:25px;</string>
+               </property>
+               <property name="text">
+                <string>Gras</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

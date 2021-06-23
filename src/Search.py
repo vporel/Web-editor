@@ -1,11 +1,11 @@
 # -*-coding:utf-8 -*-
 from PyQt5.QtWidgets import QDialog
 from PyQt5.QtGui import QTextCursor, QIcon, QPixmap
-from src.Ui_Recherche import *
+from src.Ui_Search import *
 from src.AppFiles import *
 from src.VPTheme import ICON_APP
 
-class Recherche(QDialog, Ui_dialogRecherche):
+class Search(QDialog, Ui_Search):
     """QDialog pour la recherche d'un mot"""
     def __init__(self, parent, currentIndex = 0, tabText = None):
         QDialog.__init__(self,parent)

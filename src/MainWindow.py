@@ -7,6 +7,7 @@ from PyQt5.QtGui import QColor
 from PyQt5.QtCore import pyqtSlot, QMetaObject, Qt, QTimer, QUrl
 
 from src import Ui_MainWindow
+from src.Menu import *
 from src.AppFiles import *
 from src.VPTheme import *
 from src.TabsBlock import *
@@ -21,36 +22,6 @@ from src.About import *
 from prog_languages.languages import *
 
 from srcBrowser.BrowserWindow import *
-
-class MenuBar(QMenuBar):
-    def __init__(self, parent):
-        QMenuBar.__init__(self,parent)
-    def addMenus(self, *menus):
-        menus = list(menus)
-        for menu in menus:
-            self.addMenu(menu)
-
-class Menu(QMenu):
-    def __init__(self, title, parent):
-        QMenu.__init__(self,title, parent)
-    def addMenus(self, *menus):
-        menus = list(menus)
-        for menu in menus:
-            self.addMenu(menu)
-    def addActions(self, *actions):
-        actions = list(actions)
-        for action in actions:
-            self.addAction(action)
-
-class Action(QAction):
-    def __init__(self, text, parent, icon = None, name = None, shortcut = None):
-        QAction.__init__(self, text, parent)
-        if icon is not None:
-            self.setIcon(QIcon(icon))
-        if name is not None:
-            self.setObjectName(name)
-        if shortcut is not None:
-            self.setShortcut(shortcut)
 
 
 class MainWindow(QMainWindow, Ui_MainWindow.Ui_MainWindow):
@@ -163,6 +134,7 @@ class MainWindow(QMainWindow, Ui_MainWindow.Ui_MainWindow):
         self.menuBar.addMenus(self.menuFile, self.menuEdit, self.menuView, self.menuSettings, self.menuHelp)
         self.menuBar.setStyleSheet(self.theme.styleMenu)
         self.menuLayout.addWidget(self.menuBar)
+
     def initProjects(self):
         """
             ---Initialising of project's part
@@ -176,7 +148,6 @@ class MainWindow(QMainWindow, Ui_MainWindow.Ui_MainWindow):
                     self.on_actionOpenRecentProject_triggered(path=path)
             if dictProjects["currentProjectPath"] is not None:
                 self.on_actionOpenRecentProject_triggered(path=dictProjects["currentProjectPath"])
-
 
     def initTabs(self):
         """--------------------------
@@ -236,11 +207,7 @@ class MainWindow(QMainWindow, Ui_MainWindow.Ui_MainWindow):
     def setPathCurrentFile(self, path):
         self.pathCurrentFile.setText(path)
 
-    """
-        ---------------------------------------------------------------------------------
-        ------------ MENU FICHIER ---------------------------------
-        -------------------------------------------------------------------------
-    """
+    """ MENU FICHIER """
 
     @pyqtSlot()
     def on_actionNewFile_triggered(self):
@@ -298,6 +265,7 @@ class MainWindow(QMainWindow, Ui_MainWindow.Ui_MainWindow):
             self.folders.addFolder(project.path, project.name)
             self.currentProject = project
             self.opennedProjects.append(self.currentProject)
+
     @pyqtSlot()
     def on_actionSaveFile_triggered(self):
         """------------
@@ -351,11 +319,7 @@ class MainWindow(QMainWindow, Ui_MainWindow.Ui_MainWindow):
             self.tabs.removeTab(index)
             self.initTabs()
 
-    """
-        -----------------------------------------------------------------------------------
-        ------------------ MENU VUE ----------------------------------------
-        -------------------------------------------------------------------
-    """
+    """ MENU VUE """
     @pyqtSlot()
     def on_actionShowFolders_triggered(self):
         """To show folders zone"""
@@ -414,14 +378,11 @@ class MainWindow(QMainWindow, Ui_MainWindow.Ui_MainWindow):
             self.resize(550, 720)
             self.browser.move(555, 0)
             self.browser.resize(720, 720)
+
     def on_progress_canceled(self):
         self.timer.stop()
 
-    """
-        -------------------------------------------------------------------------------
-        ------------------- MENU EDITER -------------------------------------
-        -----------------------------------------------------------------------
-    """
+    """  MENU EDITER """
 
     @pyqtSlot()
     def on_actionResearch_triggered(self):
@@ -435,12 +396,7 @@ class MainWindow(QMainWindow, Ui_MainWindow.Ui_MainWindow):
         self.rechercher = Recherche(self, 1, self.tabs.currentTabText())
         self.rechercher.show()
 
-    """
-        --------------------------------------------------------------------
-        ------------------------- MENU PREFERENCES -----------------------------------
-        
-        --------------------------------------------------------------------
-    """
+    """ MENU PREFERENCES """
 
     @pyqtSlot()
     def on_actionTheme_triggered(self):
@@ -448,11 +404,7 @@ class MainWindow(QMainWindow, Ui_MainWindow.Ui_MainWindow):
         self.themeDialog = ThemeDialog(self)
         self.themeDialog.show()
 
-    """
-        ------------------------------------------------------------------------
-        ---------------------- MENU PROJECT -----------------------------------
-        ---------------------------------------------------------------------
-    """
+    """ MENU PROJECT """
 
     @pyqtSlot()
     def on_actionModifyProject_triggered(self):
@@ -460,22 +412,13 @@ class MainWindow(QMainWindow, Ui_MainWindow.Ui_MainWindow):
             self.modifyProject = NewProject(self, action = NewProject.ACTION_MODIFY, project = self.currentProject)
             self.modifyProject.show()
 
-    """
-        -----------------------------------------------------------------------------
-        ----------------------- MENU AIDE -------------------------------------
-        --------------------------------------------------------------------------------
-    """
+    """ MENU HELP """
 
     @pyqtSlot()
     def on_actionAPropos_triggered(self):
         """About application"""
         self.about = About(self)
         self.about.show()
-
-    """
-        ------------ DANS LE MENU FICHIER --------------------------------------
-        ------------ FIN LORSQU'ON QUITTE LE PROGRAMME -----------------------------
-    """
 
     @pyqtSlot()
     def on_actionQuitter_triggered(self):
@@ -496,8 +439,11 @@ class MainWindow(QMainWindow, Ui_MainWindow.Ui_MainWindow):
 
         userFiles_File.write(files)
         userProjects_File.write(dictProjects)
-    """
+
+
     def closeEvent(self, event):
+        pass
+        """
         exist_tab_not_saved = False
         for tabText in self.tabs.tabtexts:
             if not tabText.saved:
@@ -520,6 +466,7 @@ class MainWindow(QMainWindow, Ui_MainWindow.Ui_MainWindow):
                 self.saveOnClose()
             else:
                 event.ignore()
-    """
+        """
+
 if __name__ == '__main__':
     pass

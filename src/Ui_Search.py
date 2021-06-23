@@ -11,7 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_dialogRecherche(object):
+class Ui_Search(object):
     def setupUi(self, dialogRecherche):
         dialogRecherche.setObjectName("dialogRecherche")
         dialogRecherche.resize(534, 345)
